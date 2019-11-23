@@ -1,9 +1,23 @@
 import Vue from 'vue'
+import Cookies from 'js-cookie'
+import Element from 'element-ui'
+import '@/styles/index.scss' // 全局css样式
 import App from './App.vue'
 import router from './router'
-import store from './store'
+import store from './store' // 状态管理
+import './permission' // 权限控制
+import * as filters from './filters' // 全局过滤器
 
-Vue.config.productionTip = false
+Vue.use(Element, {
+  size: Cookies.get('size') || 'medium' // 设置 element-ui 默认 size
+})
+
+// 注册全局有效的过滤器
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
+
+Vue.config.productionTip = false // 阻止启动生产消息
 
 new Vue({
   router,
