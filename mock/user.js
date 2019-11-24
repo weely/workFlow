@@ -31,12 +31,12 @@ export default [
     response: config => {
       const { username } = config.body
       const token = tokens[username]
-
+      console.log('-login--')
       // mock error
       if (!token) {
         return {
           code: 60204,
-          message: 'Account and password are incorrect.'
+          message: '用户名或密码不正确.'
         }
       }
 

@@ -9,8 +9,9 @@ import './icons' // icon
 import './permission' // 权限控制
 import * as filters from './filters' // 全局过滤器
 
+/* eslint-disable no-unused-vars */
 // 开发使用mock模拟后端数据
-// import '../mock/index.js'
+import mock from '../mock'
 
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium' // 设置 element-ui 默认 size

@@ -5,7 +5,7 @@ const defaultSettings = require('./src/settings.js')
 function resolve (dir) {
   return path.join(__dirname, dir)
 }
-
+console.log('----', process.env.NODE_ENV)
 const name = defaultSettings.title || 'Work Flow System'
 
 const port = process.env.port || process.env.npm_config_port || 8888
@@ -34,6 +34,7 @@ module.exports = {
         }
       }
     }
+    // after: require('./mock/mock-server.js')
   },
   configureWebpack: {
     // app 标题

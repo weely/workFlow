@@ -13,9 +13,8 @@ const mocks = [
   // ...search
 ]
 
-// for front mock
-// please use it cautiously, it will redefine XMLHttpRequest,
-// which will cause many of your third-party libraries to be invalidated(like progress event).
+// 使用时请当心，它将会重写XMLHttpRequest,
+// 可能导致许多第三方库失效
 export function mockXHR () {
   // mock patch
   // https://github.com/nuysoft/Mock/issues/300
@@ -56,6 +55,7 @@ export function mockXHR () {
 
 // for mock server
 const responseFake = (url, type, respond) => {
+  console.log('----mock---', url)
   return {
     url: new RegExp(`/mock${url}`),
     type: type || 'get',
