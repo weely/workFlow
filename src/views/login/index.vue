@@ -17,7 +17,7 @@
         </span>
         <el-input ref="username"
                   v-model="loginForm.username"
-                  placeholder="Username"
+                  placeholder="登录名"
                   name="username"
                   type="text"
                   tabindex="1"
@@ -25,7 +25,7 @@
       </el-form-item>
 
       <el-tooltip v-model="capsTooltip"
-                  content="Caps lock is On"
+                  content="大写模式已开启"
                   placement="right"
                   manual>
         <el-form-item prop="password">
@@ -36,7 +36,7 @@
                     ref="password"
                     v-model="loginForm.password"
                     :type="passwordType"
-                    placeholder="Password"
+                    placeholder="密码"
                     name="password"
                     tabindex="2"
                     autocomplete="on"
@@ -67,6 +67,7 @@ export default {
   name: 'Login',
   data () {
     const validateUsername = (rule, value, callback) => {
+      if (!value || value === '')callback(new Error('请输入用户名'))
       if (!validUsername(value)) {
         callback(new Error('请输入正确的用户名'))
       } else {
@@ -74,6 +75,7 @@ export default {
       }
     }
     const validatePassword = (rule, value, callback) => {
+      if (!value || value === '')callback(new Error('请输入密码'))
       if (value.length < 6) {
         callback(new Error('密码不小于6个字符'))
       } else {

@@ -5,8 +5,12 @@ import '@/styles/index.scss' // 全局css样式
 import App from './App.vue'
 import router from './router'
 import store from './store' // 状态管理
+import './icons' // icon
 import './permission' // 权限控制
 import * as filters from './filters' // 全局过滤器
+
+// 开发使用mock模拟后端数据
+// import '../mock/index.js'
 
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium' // 设置 element-ui 默认 size
