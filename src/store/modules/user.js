@@ -29,7 +29,7 @@ const mutations = {
 }
 
 const actions = {
-  // user login
+  // 登录action
   login ({ commit }, userInfo) {
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
@@ -44,7 +44,7 @@ const actions = {
     })
   },
 
-  // get user info
+  // 获取用户信息
   getInfo ({ commit, state }) {
     return new Promise((resolve, reject) => {
       getInfo(state.token).then(response => {
@@ -52,14 +52,13 @@ const actions = {
 
         if (!data) {
           /* eslint-disable prefer-promise-reject-errors */
-          reject('Verification failed, please Login again.')
+          reject('验证失败，请重新登录.')
         }
 
         const { roles, name, avatar, introduction } = data
 
-        // roles must be a non-empty array
         if (!roles || roles.length <= 0) {
-          reject('getInfo: roles must be a non-null array!')
+          reject('getInfo: 角色权限不能为空!')
         }
 
         commit('SET_ROLES', roles)
@@ -82,8 +81,7 @@ const actions = {
         removeToken()
         resetRouter()
 
-        // reset visited views and cached views
-        // to fixed https://github.com/PanJiaChen/vue-element-admin/issues/2485
+        // 退出重制tagview,删除所有标签栏
         dispatch('tagsView/delAllViews', null, { root: true })
 
         resolve()
@@ -103,7 +101,7 @@ const actions = {
     })
   },
 
-  // dynamically modify permissions
+  // 动态设置权限
   changeRoles ({ commit, dispatch }, role) {
     return new Promise(async resolve => {
       const token = role + '-token'
@@ -115,13 +113,13 @@ const actions = {
 
       resetRouter()
 
-      // generate accessible routes map based on roles
+      // 基于角色生成路由
       const accessRoutes = await dispatch('permission/generateRoutes', roles, { root: true })
 
-      // dynamically add accessible routes
+      // 动态添加路由
       router.addRoutes(accessRoutes)
 
-      // reset visited views and cached views
+      // 删除并重置标签栏
       dispatch('tagsView/delAllViews', null, { root: true })
 
       resolve()

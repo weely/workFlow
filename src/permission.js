@@ -8,7 +8,7 @@ import getPageTitle from '@/utils/get-page-title'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
-const whiteList = ['/login'] // no redirect whitelist
+const whiteList = ['/login'] // 路由白名单
 
 router.beforeEach(async (to, from, next) => {
   // 开启进度条
@@ -35,18 +35,15 @@ router.beforeEach(async (to, from, next) => {
           // 获取用户信息
           // 注意：角色需为数组对象！例如：['admin'] 或，['developer','editor']
           const { roles } = await store.dispatch('user/getInfo')
-
           // 基于角色生成路由map
           const accessRoutes = await store.dispatch('permission/generateRoutes', roles)
-
           // 动态添加可访问路由
           router.addRoutes(accessRoutes)
-
           // hack method to ensure that addRoutes is complete
           // set the replace: true, so the navigation will not leave a history record
           next({ ...to, replace: true })
         } catch (error) {
-          // 清楚token跳转到登录页
+          // 清除token跳转到登录页
           await store.dispatch('user/resetToken')
           Message.error(error || 'Has Error')
           next(`/login?redirect=${to.path}`)

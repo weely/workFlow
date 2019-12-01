@@ -18,7 +18,7 @@
         <screenfull id="screenfull"
                     class="right-menu-item hover-effect" />
 
-        <el-tooltip content="Global Size"
+        <el-tooltip content="布局大小"
                     effect="dark"
                     placement="bottom">
           <size-select id="size-select"
@@ -36,22 +36,14 @@
         </div>
         <el-dropdown-menu slot="dropdown">
           <router-link to="/profile/index">
-            <el-dropdown-item>Profile</el-dropdown-item>
+            <el-dropdown-item>个人中心</el-dropdown-item>
           </router-link>
           <router-link to="/">
-            <el-dropdown-item>Dashboard</el-dropdown-item>
+            <el-dropdown-item>首页</el-dropdown-item>
           </router-link>
-          <a target="_blank"
-             href="https://github.com/PanJiaChen/vue-element-admin/">
-            <el-dropdown-item>Github</el-dropdown-item>
-          </a>
-          <a target="_blank"
-             href="https://panjiachen.github.io/vue-element-admin-site/#/">
-            <el-dropdown-item>Docs</el-dropdown-item>
-          </a>
           <el-dropdown-item divided>
             <span style="display:block;"
-                  @click="logout">Log Out</span>
+                  @click="logout">退出</span>
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -63,7 +55,7 @@
 import { mapGetters } from 'vuex'
 import Breadcrumb from '@/components/Breadcrumb'
 import Menu from '@/components/Menu'
-// import ErrorLog from '@/components/ErrorLog'
+import ErrorLog from '@/components/ErrorLog'
 import Screenfull from '@/components/Screenfull'
 import SizeSelect from '@/components/SizeSelect'
 import Search from '@/components/HeaderSearch'
@@ -74,7 +66,8 @@ export default {
     Menu,
     Screenfull,
     SizeSelect,
-    Search
+    Search,
+    ErrorLog
   },
   computed: {
     ...mapGetters([
