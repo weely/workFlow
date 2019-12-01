@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Layout from '@/layout'
 
-// import componentsRouter from './modules/components'
+import componentsRouter from './modules/components'
 
 Vue.use(VueRouter)
 
@@ -140,6 +140,19 @@ export const asyncRoutes = [
       }
     ]
   },
+  {
+    path: '/icon',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/icons/index'),
+        name: 'Icons',
+        meta: { title: '图标', icon: 'icon', noCache: true }
+      }
+    ]
+  },
+  componentsRouter,
   {
     path: '/example',
     component: Layout,
