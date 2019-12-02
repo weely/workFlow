@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     click () {
-      if (!screenfull.enabled) {
+      if (!screenfull.isEnabled) {
         this.$message({
           message: '浏览器不支持全屏',
           type: 'warning'

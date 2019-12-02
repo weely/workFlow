@@ -7,11 +7,11 @@ import router from './router'
 import store from './store' // 状态管理
 import './icons' // icon
 import './permission' // 权限控制
-import * as filters from './filters' // 全局过滤器
+import * as filters from './filters' // 全局过滤器，格式化部分数据
 
 /* eslint-disable no-unused-vars */
 // 开发使用mock模拟后端数据
-import mock from '../mock'
+// import mock from '../mock'
 
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium' // 设置 element-ui 默认 size

@@ -48,6 +48,7 @@ const mutations = {
 }
 
 const actions = {
+  //  设置权限
   generateRoutes ({ commit }, roles) {
     return new Promise(resolve => {
       let accessedRoutes
