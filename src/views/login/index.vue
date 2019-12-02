@@ -242,6 +242,7 @@ $light_gray: #eee;
 
   .login-form {
     background: #2d3a4b;
+    opacity: 0.8;
     position: relative;
     width: 520px;
     max-width: 100%;

@@ -38,62 +38,17 @@
 
     <div class="components-container">
       <aside>
-        Sticky header, When the page is scrolled to the preset position will be sticky on the top.
+        顶部吸附，当页面滚动到预设的位置会吸附在顶部
       </aside>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
+      <div v-for="i in 10" :key="`key${i}`">
+        这是第{{ i }}行
+      </div>
       <sticky :sticky-top="200">
         <el-button type="primary"> placeholder</el-button>
       </sticky>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
-      <div>placeholder</div>
+      <div v-for="i in 50" :key="`key${i}`">
+        这是第{{ 10 + i }}行
+      </div>
     </div>
   </div>
 </template>
@@ -104,7 +59,7 @@ import Sticky from '@/components/Sticky'
 export default {
   name: 'StickyDemo',
   components: { Sticky },
-  data() {
+  data () {
     return {
       time: '',
       url: '',
@@ -115,7 +70,7 @@ export default {
         { key: 'c-platform', name: 'platformC' }
       ],
       pickerOptions: {
-        disabledDate(time) {
+        disabledDate (time) {
           return time.getTime() > Date.now()
         }
       }

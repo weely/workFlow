@@ -1,8 +1,8 @@
 <template>
   <div class="components-container">
-    <aside><strong>SplitPane</strong> If you've used
+    <aside><strong>SplitPane（分割面板）</strong> 如果您使用过
       <a href="https://codepen.io/" target="_blank"> codepen</a>,
-      <a href="https://jsfiddle.net/" target="_blank"> jsfiddle </a>will not be unfamiliar.
+      <a href="https://jsfiddle.net/" target="_blank"> jsfiddle </a>将不会陌生.
       <a href="https://github.com/PanJiaChen/vue-split-pane" target="_blank"> Github repository</a>
     </aside>
     <split-pane split="vertical" @resize="resize">
@@ -30,7 +30,7 @@ export default {
   name: 'SplitpaneDemo',
   components: { splitPane },
   methods: {
-    resize() {
+    resize () {
       console.log('resize')
     }
   }

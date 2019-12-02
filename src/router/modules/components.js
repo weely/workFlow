@@ -34,7 +34,7 @@ const componentsRouter = {
       path: 'split-pane',
       component: () => import('@/views/components-demo/split-pane'),
       name: 'SplitpaneDemo',
-      meta: { title: 'SplitPane' }
+      meta: { title: '分割面板' }
     },
     {
       path: 'avatar-upload',
@@ -46,13 +46,13 @@ const componentsRouter = {
       path: 'dropzone',
       component: () => import('@/views/components-demo/dropzone'),
       name: 'DropzoneDemo',
-      meta: { title: 'Dropzone' }
+      meta: { title: '拖拽上传' }
     },
     {
       path: 'sticky',
       component: () => import('@/views/components-demo/sticky'),
       name: 'StickyDemo',
-      meta: { title: 'Sticky' }
+      meta: { title: '顶部吸附' }
     },
     {
       path: 'mixin',

@@ -1,12 +1,11 @@
 <template>
   <div class="components-container">
-    <aside>Markdown is based on
-      <a href="https://github.com/nhnent/tui.editor" target="_blank">tui.editor</a> ，simply wrapped with Vue.
+    <aside>Markdown 基于
+      <a href="https://github.com/nhnent/tui.editor" target="_blank">tui.editor</a> ，利用vue进行了简单封装。
       <a
         target="_blank"
         href="https://panjiachen.github.io/vue-element-admin-site/feature/component/markdown-editor.html"
-      >
-        Documentation </a>
+      >参考文档</a>
     </aside>
 
     <div class="editor-container">
@@ -63,7 +62,7 @@ const content = `
 export default {
   name: 'MarkdownDemo',
   components: { MarkdownEditor },
-  data() {
+  data () {
     return {
       content1: content,
       content2: content,
@@ -78,12 +77,12 @@ export default {
     }
   },
   computed: {
-    language() {
+    language () {
       return this.languageTypeList['en']
     }
   },
   methods: {
-    getHtml() {
+    getHtml () {
       this.html = this.$refs.markdownEditor.getHtml()
       console.log(this.html)
     }
