@@ -17,7 +17,7 @@
         </span>
         <el-input ref="username"
                   v-model="loginForm.username"
-                  placeholder="登录名"
+                  placeholder="用户名"
                   name="username"
                   type="text"
                   tabindex="1"
@@ -67,7 +67,7 @@ export default {
   name: 'Login',
   data () {
     const validateUsername = (rule, value, callback) => {
-      if (!value || value === '')callback(new Error('请输入用户名'))
+      if (!value || value === '') callback(new Error('请输入用户名'))
       if (!validUsername(value)) {
         callback(new Error('请输入正确的用户名'))
       } else {
@@ -75,7 +75,7 @@ export default {
       }
     }
     const validatePassword = (rule, value, callback) => {
-      if (!value || value === '')callback(new Error('请输入密码'))
+      if (!value || value === '') callback(new Error('请输入密码'))
       if (value.length < 6) {
         callback(new Error('密码不小于6个字符'))
       } else {
@@ -84,7 +84,7 @@ export default {
     }
     return {
       loginForm: {
-        username: 'admin',
+        username: 'test',
         password: '111111'
       },
       loginRules: {
@@ -179,6 +179,13 @@ export default {
 /* 修复input 背景不协调 和光标变色 */
 /* Detail see https://github.com/PanJiaChen/vue-element-admin/pull/927 */
 
+.login-container {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background: url("../../assets/images/sakura.png") no-repeat;
+}
+
 $bg: #283443;
 $light_gray: #fff;
 $cursor: #fff;
@@ -234,10 +241,12 @@ $light_gray: #eee;
   overflow: hidden;
 
   .login-form {
+    background: #2d3a4b;
     position: relative;
     width: 520px;
     max-width: 100%;
-    padding: 160px 35px 0;
+    padding: 40px;
+    top: 20%;
     margin: 0 auto;
     overflow: hidden;
   }
@@ -263,6 +272,9 @@ $light_gray: #eee;
   }
 
   .title-container {
+    h3 {
+      color: #444;
+    }
     position: relative;
 
     .title {
