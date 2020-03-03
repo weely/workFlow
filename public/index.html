@@ -4,8 +4,31 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>work-flow</title>
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+
+    <!-- 看板娘 -->
+    <!-- <script type="text/javascript" charset="utf-8"
+      src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.0.min.js"></script>
+    <script type="text/javascript" charset="utf-8"
+      src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.min.js"></script> -->
+    <script type="text/javascript" charset="utf-8" src="./L2Dwidget/L2Dwidget.0.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./L2Dwidget/L2Dwidget.min.js"></script>
+    <script type="text/javascript">
+    try{
+      L2Dwidget.init({"display": {
+          "superSample": 2,
+          "width": 200,
+          "height": 400,
+               "position": "right",
+                   "hOffset": 0,
+          "vOffset": 0
+            }
+       });
+    } catch(err){
+      console.error(err)
+    }
+    </script>
   </head>
   <body>
     <noscript>
