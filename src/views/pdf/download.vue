@@ -15,17 +15,17 @@
 <script>
 
 export default {
-  data() {
+  data () {
     return {
       article: '',
       fullscreenLoading: true
     }
   },
-  mounted() {
+  mounted () {
     this.fetchData()
   },
   methods: {
-    fetchData() {
+    fetchData () {
        import('./content.js').then(data => {
          const { title } = data.default
          document.title = title

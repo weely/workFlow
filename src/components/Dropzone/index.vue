@@ -7,7 +7,7 @@
 <script>
 import Dropzone from 'dropzone'
 import 'dropzone/dist/dropzone.css'
-// import { getToken } from 'api/qiniu';
+// import { getToken } from 'api/smms-api'
 
 Dropzone.autoDiscover = false
 
@@ -127,7 +127,7 @@ export default {
         }
       },
       accept: (file, done) => {
-        /* 七牛 */
+        /* smms */
         // const token = this.$store.getters.token;
         // getToken(token).then(response => {
         //   file.token = response.data.qiniu_token;

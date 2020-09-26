@@ -25,27 +25,27 @@ import { transactionList } from '@/api/remote-search'
 
 export default {
   filters: {
-    statusFilter(status) {
+    statusFilter (status) {
       const statusMap = {
         success: 'success',
         pending: 'danger'
       }
       return statusMap[status]
     },
-    orderNoFilter(str) {
+    orderNoFilter (str) {
       return str.substring(0, 30)
     }
   },
-  data() {
+  data () {
     return {
       list: null
     }
   },
-  created() {
+  created () {
     this.fetchData()
   },
   methods: {
-    fetchData() {
+    fetchData () {
       transactionList().then(response => {
         this.list = response.data.items.slice(0, 8)
       })

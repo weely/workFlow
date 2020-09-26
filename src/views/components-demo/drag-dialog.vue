@@ -22,7 +22,7 @@ import elDragDialog from '@/directive/el-drag-dialog' // base on element-ui
 export default {
   name: 'DragDialogDemo',
   directives: { elDragDialog },
-  data() {
+  data () {
     return {
       dialogTableVisible: false,
       options: [
@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     // v-el-drag-dialog onDrag callback function
-    handleDrag() {
+    handleDrag () {
       this.$refs.select.blur()
     }
   }

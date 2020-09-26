@@ -10,4 +10,3 @@
     >Document</a>
   </aside>
 </template>
-

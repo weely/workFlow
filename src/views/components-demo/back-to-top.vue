@@ -130,7 +130,7 @@ import BackToTop from '@/components/BackToTop'
 export default {
   name: 'BackToTopDemo',
   components: { BackToTop },
-  data() {
+  data () {
     return {
       // customizable button style, show/hide critical point, return position
       myBackToTopStyle: {

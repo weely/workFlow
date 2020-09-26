@@ -1,10 +1,10 @@
 <template>
   <div class="components-container">
     <aside>实例基于
-      <a class="link-type" href="//github.com/dai-siki/vue-image-crop-upload"> vue-image-crop-upload</a>.
+      <a class="link-type" href="//github.com/dai-siki/vue-image-crop-upload" target="_black"> vue-image-crop-upload</a>.
     </aside>
 
-    <pan-thumb :image="image" />
+    <pan-thumb :image="image">😊</pan-thumb>
 
     <el-button type="primary" icon="el-icon-upload" style="position: absolute;bottom: 15px;margin-left: 40px;" @click="imagecropperShow=true">
       上传头像
