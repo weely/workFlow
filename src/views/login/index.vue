@@ -8,7 +8,7 @@
              label-position="left">
 
       <div class="title-container">
-        <h3 class="title">登 录</h3>
+        <h3 class="title">登 录（Login）</h3>
       </div>
 
       <el-form-item prop="username">
