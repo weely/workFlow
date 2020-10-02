@@ -181,8 +181,10 @@ export default {
 .login-container {
   width: 100%;
   height: 100%;
-  background-size: 100% 100%;
-  background: url("../../assets/images/sakura.png") no-repeat;
+  background-size: cover;
+  // background: url("../../assets/images/sakura.png") no-repeat;
+  background-image: url("https://i.loli.net/2020/10/02/T4hqnLOWD5IJ1zo.png");
+  background-repeat: no-repeat;
 }
 
 $bg: #283443;
